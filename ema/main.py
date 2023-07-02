@@ -16,4 +16,5 @@ async def root():
 async def embedding(param: RequestBody):
     text = param.text
     vec = JapaneseEmbeddingService.embedding(text)
-    return Response(vec=vec)
+    print(type(vec[0]))
+    return Response(vec=list(vec[0]))
